@@ -14,10 +14,10 @@ class GridAPI(OkxClient):
                   'basePos': basePos}
         return self._request_with_params(POST, GRID_ORDER_ALGO, params)
 
-    def grid_amend_order_algo(self, algoId='', instId='', slTriggerPx='', tpTriggerPx=''):
-        params = {'algoId': algoId, 'instId': instId, 'slTriggerPx': slTriggerPx, 'tpTriggerPx': tpTriggerPx}
+    def grid_amend_order_algo(self, algoId='', instId='', slTriggerPx='', tpTriggerPx='', maxPx='', minPx='', gridNum=''):
+        params = {'algoId': algoId, 'instId': instId, 'slTriggerPx': slTriggerPx, 'tpTriggerPx': tpTriggerPx, 'maxPx': maxPx, 'minPx': minPx, 'gridNum': gridNum}
         return self._request_with_params(POST, GRID_AMEND_ORDER_ALGO, params)
-
+        
     def grid_stop_order_algo(self, algoId='', instId='', algoOrdType='', stopType=''):
         params = [{'algoId': algoId, 'instId': instId, 'algoOrdType': algoOrdType, 'stopType': stopType}]
         return self._request_with_params(POST, GRID_STOP_ORDER_ALGO, params)
